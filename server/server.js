@@ -21,7 +21,7 @@ app.post('/todos', (req, res) => {
     });
 });
 
-app.get('/todos', () => {
+app.get('/todos', (req, res) => {
     Todo.find().then((todos) => {
         res.status(200).json(todos);
     }, (e) => {
